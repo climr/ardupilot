@@ -40,6 +40,7 @@ public:
         k_param_pivot_turn_angle_old,   // unused
         k_param_rc_13_old,  // unused
         k_param_rc_14_old,  // unused
+        
 
         // IO pins
         k_param_rssi_pin = 20,  // unused, replaced by rssi_ library parameters
@@ -56,6 +57,24 @@ public:
         k_param_serial0_baud,   // deprecated, can be deleted
         k_param_serial1_baud,   // deprecated, can be deleted
         k_param_serial2_baud,   // deprecated, can be deleted
+
+       // amarok specific params
+        k_param_low_speed_throttle = 50,
+        k_param_high_speed_throttle,        
+        k_param_gimbal_servo,
+        k_param_gimbal_servo_speed,
+        k_param_gimbal_servo_mid,
+        k_param_gimbal_servo_max,
+        k_param_gimbal_servo_min,
+        k_param_overt_light_servo,
+        k_param_ir_light_servo,
+        k_param_light_servo_on,
+        k_param_light_servo_off,
+        k_param_weapon_servo,
+        k_param_weapon_servo_max,
+        k_param_weapon_servo_min,        
+        k_param_speed_mode,
+        k_param_gimbal_range,
 
         // 97: RSSI
         k_param_rssi = 97,
@@ -215,6 +234,26 @@ public:
         };
 
     AP_Int16    format_version;
+
+  
+           // Amarok Specific
+    //
+    AP_Int8     low_speed_throttle;
+    AP_Int8     high_speed_throttle;
+    AP_Int8     gimbal_servo;
+    AP_Int8     gimbal_servo_speed;
+    AP_Int16    gimbal_servo_mid;
+    AP_Int16    gimbal_servo_max;
+    AP_Int16    gimbal_servo_min;
+    AP_Int8     overt_light_servo;
+    AP_Int8     ir_light_servo;
+    AP_Int16    light_servo_on;
+    AP_Int16    light_servo_off;
+    AP_Int8     weapon_servo;
+    AP_Int16    weapon_servo_max;
+    AP_Int16    weapon_servo_min;
+    AP_Int8     speed_mode; 
+    AP_Int16    gimbal_range;
 
     // Misc
     //

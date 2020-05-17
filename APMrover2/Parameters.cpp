@@ -10,6 +10,118 @@
 #define GOBJECTN(v, pname, name, class) { AP_PARAM_GROUP, name, Parameters::k_param_ ## pname, &rover.v, {group_info : class::var_info} }
 
 const AP_Param::Info Rover::var_info[] = {
+    // @Param: SPEED_LOW_THR
+    // @DisplayName: Low speed throttle percentage
+    // @Description: This value is set to MOT_THR_MAX when in low speed mode
+    // @Range: 30 90
+    // @User: Advanced
+    GSCALAR(low_speed_throttle,         "SPEED_LOW_THR",   30),
+
+    // @Param: SPEED_HIGH_THR
+    // @DisplayName: High speed throttle percentage
+    // @Description: This value is set to MOT_THR_MAX when in high speed mode
+    // @Range: 40 100
+    // @User: Advanced
+    GSCALAR(high_speed_throttle,         "SPEED_HIGH_THR",   100),
+
+    // @Param: GIMBAL_SERVO
+    // @DisplayName: Gimbal servo channel
+    // @Description: This is the channel is used for the Amorak servo
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(gimbal_servo,         "GIMBAL_SERVO",   5),
+
+    // @Param: GIMBAL_SPEED
+    // @DisplayName: Gimbal Speed
+    // @Description: This value is used to control the gimbal speed 1-100%
+    // @Range: 1 100
+    // @User: Advanced
+    GSCALAR(gimbal_servo_speed,         "GIMBAL_SPEED",   15),
+
+     // @Param: GIMBAL_MID
+    // @DisplayName: Gimbal mid point
+    // @Description: This value is the PWM value of the gimbal midpoint
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(gimbal_servo_mid,         "GIMBAL_MID",   1500),
+
+     // @Param: GIMBAL_MAX
+    // @DisplayName: Gimbal max point
+    // @Description: This value is the PWM value of the gimbal maxpoint
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(gimbal_servo_max,         "GIMBAL_MAX",   2100),
+
+     // @Param: GIMBAL_MIN
+    // @DisplayName: Gimbal min point
+    // @Description: This value is the PWM value of the gimbal minpoint
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(gimbal_servo_min,         "GIMBAL_MIN",   900),
+
+     // @Param: LIGHT_OV_SER
+    // @DisplayName: Overt light servo channel
+    // @Description: This value is the channel used for the Amorak overt servo
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(overt_light_servo,         "LIGHT_OV_SER",   7),
+
+     // @Param: LIGHT_IR_SER
+    // @DisplayName: IR light servo channel
+    // @Description: This value is the channel used for the Amorak ir servo
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(ir_light_servo,         "LIGHT_IR_SER",   8),
+
+     // @Param: LIGHT_ON_2
+    // @DisplayName: Light on point
+    // @Description: This value is the PWM value used to turn on the Amorak lights
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(light_servo_on,         "LIGHT_ON",   2100),
+
+     // @Param: LIGHT_OFF
+    // @DisplayName: Light off point
+    // @Description: This value is the PWM value used to turn off the Amorak lights
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(light_servo_off,         "LIGHT_OFF",   900),
+
+     // @Param: WEAPON_SERVO
+    // @DisplayName: Weapon servo channel
+    // @Description: This value is set the servo channel use for the Amorak weapon
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(weapon_servo,         "WEAPON_SERVO",   6),
+
+     // @Param: WEAPON_MAX
+    // @DisplayName: Weapon servo max point
+    // @Description: This value is the on PWM value for the Amorak weapon servo
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(weapon_servo_max,         "WEAPON_MAX",   2100),
+
+     // @Param: WEAPON_MIN
+    // @DisplayName: Weapon servo min point
+    // @Description: This value is set the off value for the Amorak weapon servo
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(weapon_servo_min,         "WEAPON_MIN",   900),
+
+     // @Param: SPEED_MODE
+    // @DisplayName: Amarok speed mode
+    // @Description: This value relfects if the vehicle is in low speed or hight speed mode
+    // @Range: 0 1
+    // @User: Advanced
+    GSCALAR(speed_mode,         "SPEED_MODE",   1),
+
+    // @Param: GIMBAL_RANGE
+    // @DisplayName: Amarok gimbal range mode
+    // @Description: This value is the range in degrees of the gimbal
+    // @Range: 0 270
+    // @User: Advanced
+    GSCALAR(gimbal_range,         "GIMBAL_RANGE",  170),   
+
     // @Param: FORMAT_VERSION
     // @DisplayName: Eeprom format version number
     // @Description: This value is incremented when changes are made to the eeprom format

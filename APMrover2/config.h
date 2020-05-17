@@ -8,6 +8,16 @@
 //////////////////////////////////////////////////////////////////////////////
 // HIL_MODE                                 OPTIONAL
 
+
+#ifndef SPEED_MODE
+  #define SPEED_MODE 1
+#endif
+
+#ifndef SPEED_LOW_THR
+  #define SPEED_LOW_THR 30
+#endif
+
+
 #ifndef HIL_MODE
   #define HIL_MODE HIL_MODE_DISABLED
 #endif
