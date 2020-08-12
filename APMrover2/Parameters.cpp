@@ -64,14 +64,14 @@ const AP_Param::Info Rover::var_info[] = {
     // @Description: This value is the channel used for the Amorak overt servo
     // @Range: 5 12
     // @User: Advanced
-    GSCALAR(overt_light_servo,         "LIGHT_OV_SER",   7),
+    GSCALAR(overt_light_servo,         "LIGHT_OV_SER",   6),
 
      // @Param: LIGHT_IR_SER
     // @DisplayName: IR light servo channel
     // @Description: This value is the channel used for the Amorak ir servo
     // @Range: 5 12
     // @User: Advanced
-    GSCALAR(ir_light_servo,         "LIGHT_IR_SER",   8),
+    GSCALAR(ir_light_servo,         "LIGHT_IR_SER",   7),
 
      // @Param: LIGHT_ON_2
     // @DisplayName: Light on point
@@ -92,7 +92,7 @@ const AP_Param::Info Rover::var_info[] = {
     // @Description: This value is set the servo channel use for the Amorak weapon
     // @Range: 5 12
     // @User: Advanced
-    GSCALAR(weapon_servo,         "WEAPON_SERVO",   6),
+    GSCALAR(weapon_servo,         "WEAPON_SERVO",   9),
 
      // @Param: WEAPON_MAX
     // @DisplayName: Weapon servo max point
@@ -121,6 +121,21 @@ const AP_Param::Info Rover::var_info[] = {
     // @Range: 0 270
     // @User: Advanced
     GSCALAR(gimbal_range,         "GIMBAL_RANGE",  170),   
+
+    // @Param: FLIPPER_1_SERVO
+    // @DisplayName: Flipper main servo
+    // @Description: This value is the main servo used in the flipper apparatus
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(flipper_main,        "FLIPPER_1_SERVO",  8),   
+
+    // @Param: FLIPPER_2_SERVO
+    // @DisplayName: flipper sub servo
+    // @Description: This value is the sub servo used in the flipper apparatus 
+    // @Range: 5 12
+    // @User: Advanced
+    GSCALAR(flipper_sub,         "FLIPPER_2_SERVO",  4),   
+
 
     // @Param: FORMAT_VERSION
     // @DisplayName: Eeprom format version number

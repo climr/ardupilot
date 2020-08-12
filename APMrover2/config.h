@@ -9,6 +9,14 @@
 // HIL_MODE                                 OPTIONAL
 
 
+#ifndef FLIPPER_1_SERVO
+	#define FLIPPER_1_SERV0 8
+#endif
+
+#ifndef FLIPPER_2_SERVO
+	#define FLIPPER_2_SERVO 4
+#endif
+
 #ifndef SPEED_MODE
   #define SPEED_MODE 1
 #endif

@@ -75,6 +75,8 @@ public:
         k_param_weapon_servo_min,        
         k_param_speed_mode,
         k_param_gimbal_range,
+	k_param_flipper_main,
+	k_param_flipper_sub,
 
         // 97: RSSI
         k_param_rssi = 97,
@@ -254,6 +256,8 @@ public:
     AP_Int16    weapon_servo_min;
     AP_Int8     speed_mode; 
     AP_Int16    gimbal_range;
+    AP_Int8     flipper_main;
+    AP_Int8     flipper_sub;
 
     // Misc
     //
