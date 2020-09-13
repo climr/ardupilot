@@ -102,9 +102,9 @@ bool NCP5623::hw_init(void)
 // set_rgb - set color as a combination of red, green and blue values
 bool NCP5623::hw_set_rgb(uint8_t red, uint8_t green, uint8_t blue)
 {
-    rgb[0] = red;
+    rgb[0] = blue;
     rgb[1] = green;
-    rgb[2] = blue;
+    rgb[2] = red;
     _need_update = true;
     return true;
 }
