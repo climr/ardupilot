@@ -66,15 +66,20 @@ public:
         k_param_gimbal_servo_mid,
         k_param_gimbal_servo_max,
         k_param_gimbal_servo_min,
-        k_param_overt_light_servo,
-        k_param_ir_light_servo,
-        k_param_light_servo_on,
-        k_param_light_servo_off,
+        k_param_light1_servo,
+        k_param_light2_servo,
+        k_param_overt_servo_on,
+	k_param_light_servo_off,
+	k_param_ir_servo_on,
         k_param_weapon_servo,
         k_param_weapon_servo_max,
         k_param_weapon_servo_min,        
         k_param_speed_mode,
         k_param_gimbal_range,
+	k_param_hi_spd_servo_max,
+	k_param_lo_spd_servo_max,
+	k_param_hi_spd_servo_min,
+	k_param_lo_spd_servo_min,
 
         // 97: RSSI
         k_param_rssi = 97,
@@ -245,15 +250,21 @@ public:
     AP_Int16    gimbal_servo_mid;
     AP_Int16    gimbal_servo_max;
     AP_Int16    gimbal_servo_min;
-    AP_Int8     overt_light_servo;
-    AP_Int8     ir_light_servo;
-    AP_Int16    light_servo_on;
+    AP_Int8     light1_servo;
+    AP_Int8     light2_servo;
+    AP_Int16    overt_servo_on;
     AP_Int16    light_servo_off;
+    AP_Int16    ir_servo_on;
     AP_Int8     weapon_servo;
     AP_Int16    weapon_servo_max;
     AP_Int16    weapon_servo_min;
     AP_Int8     speed_mode; 
     AP_Int16    gimbal_range;
+    AP_Int16    hi_spd_servo_max;
+    AP_Int16    lo_spd_servo_max;
+    AP_Int16    hi_spd_servo_min;
+    AP_Int16    lo_spd_servo_min;
+
 
     // Misc
     //

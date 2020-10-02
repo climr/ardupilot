@@ -59,42 +59,21 @@ const AP_Param::Info Rover::var_info[] = {
     // @User: Advanced
     GSCALAR(gimbal_servo_min,         "GIMBAL_MIN",   900),
 
-    // @Param: LIGHT1_SER
-    // @DisplayName: First light servo channel
-    // @Description: This value is the channel used for the Amorak first light
+     // @Param: LIGHT1_SER
+    // @DisplayName: Light 1 servo channel
+    // @Description: This value is the channel used for the first light
     // @Range: 5 12
     // @User: Advanced
-    GSCALAR(light1_servo,         "LIGHT_1_SER",   7),
+    GSCALAR(light1_servo,         "LIGHT1_SER",   7),
 
      // @Param: LIGHT2_SER
-    // @DisplayName: Second light servo channel
-    // @Description: This value is the channel used for the Amorak second light
+    // @DisplayName: Light 2 servo channel
+    // @Description: This value is the channel used for the second light
     // @Range: 5 12
     // @User: Advanced
-    GSCALAR(light2_servo,         "LIGHT_2_SER",   8),
+    GSCALAR(light2_servo,         "LIGHT2_SER",   8),
 
-     // @Param: OVERT_LIGHT_ON
-    // @DisplayName: Overt Light on point
-    // @Description: This value is the PWM value used to turn on the Amorak overt lights
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(overt_servo_on,         "OVERT_LIGHT_ON",   1400),
-
-     // @Param: LIGHT_OFF
-    // @DisplayName: Light off point
-    // @Description: This value is the PWM value used to turn off the Amorak lights
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(light_servo_off,         "LIGHT_OFF",   900),
-
-     // @Param: IR_LIGHT_ON
-    // @DisplayName: IR Light on point
-    // @Description: This value is the PWM value used to turn on the Amorak IR lights
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(ir_servo_on,         "OVERT_LIGHT_ON",   2000),
-
-
+    
      // @Param: WEAPON_SERVO
     // @DisplayName: Weapon servo channel
     // @Description: This value is set the servo channel use for the Amorak weapon
@@ -129,36 +108,6 @@ const AP_Param::Info Rover::var_info[] = {
     // @Range: 0 270
     // @User: Advanced
     GSCALAR(gimbal_range,         "GIMBAL_RANGE",  170),   
-
-
-    // @Param: HI_SPD_SERVO_MAX
-    // @DisplayName: Amarok high speed servo max
-    // @Description: This value relfects maximum servo throw when in high speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(hi_spd_servo_max,         "HI_SPD_SERVO_MAX",   1800),
-
-    // @Param: LO_SPD_SERVO_MAX
-    // @DisplayName: Amarok low speed servo max
-    // @Description: This value reflect maximum servo throw when in low speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(lo_spd_servo_max,         "LO_SPD_SERVO_MAX",  2100),   
-
-    // @Param: HI_SPD_SERVO_MIN
-    // @DisplayName: Amarok high speed servo min
-    // @Description: This value relfects minimum servo throw when in high speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(hi_spd_servo_min,         "HI_SPD_SERVO_MIN",   1200),
-
-    // @Param: LO_SPD_SERVO_MIN
-    // @DisplayName: Amarok low speed servo min
-    // @Description: This value reflect minimum servo throw when in low speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(lo_spd_servo_min,         "LO_SPD_SERVO_MIN",  900),   
-
 
     // @Param: FORMAT_VERSION
     // @DisplayName: Eeprom format version number

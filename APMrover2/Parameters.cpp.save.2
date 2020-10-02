@@ -73,26 +73,33 @@ const AP_Param::Info Rover::var_info[] = {
     // @User: Advanced
     GSCALAR(light2_servo,         "LIGHT_2_SER",   8),
 
-     // @Param: OVERT_LIGHT_ON
+    // @Param: OVERT_LIGHT_ON
     // @DisplayName: Overt Light on point
     // @Description: This value is the PWM value used to turn on the Amorak overt lights
     // @Range: 800 2200
     // @User: Advanced
     GSCALAR(overt_servo_on,         "OVERT_LIGHT_ON",   1400),
 
-     // @Param: LIGHT_OFF
+    // @Param: OVERT_LIGHT_OFF
     // @DisplayName: Light off point
     // @Description: This value is the PWM value used to turn off the Amorak lights
     // @Range: 800 2200
     // @User: Advanced
-    GSCALAR(light_servo_off,         "LIGHT_OFF",   900),
+    GSCALAR(overt_servo_off,         "OVERT_LIGHT_OFF",   900),
 
-     // @Param: IR_LIGHT_ON
+    // @Param: IR_LIGHT_ON
     // @DisplayName: IR Light on point
     // @Description: This value is the PWM value used to turn on the Amorak IR lights
     // @Range: 800 2200
     // @User: Advanced
-    GSCALAR(ir_servo_on,         "OVERT_LIGHT_ON",   2000),
+    GSCALAR(ir_servo_on,         "IR_LIGHT_ON",   2000),
+
+     // @Param: IR_LIGHT_OFF
+    // @DisplayName: Light off point
+    // @Description: This value is the PWM value used to turn off the Amorak IR lights
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(ir_servo_off,         "IR_LIGHT_OFF",   900),
 
 
      // @Param: WEAPON_SERVO
@@ -130,40 +137,26 @@ const AP_Param::Info Rover::var_info[] = {
     // @User: Advanced
     GSCALAR(gimbal_range,         "GIMBAL_RANGE",  170),   
 
-
-    // @Param: HI_SPD_SERVO_MAX
-    // @DisplayName: Amarok high speed servo max
-    // @Description: This value relfects maximum servo throw when in high speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(hi_spd_servo_max,         "HI_SPD_SERVO_MAX",   1800),
-
-    // @Param: LO_SPD_SERVO_MAX
-    // @DisplayName: Amarok low speed servo max
-    // @Description: This value reflect maximum servo throw when in low speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(lo_spd_servo_max,         "LO_SPD_SERVO_MAX",  2100),   
-
-    // @Param: HI_SPD_SERVO_MIN
-    // @DisplayName: Amarok high speed servo min
-    // @Description: This value relfects minimum servo throw when in high speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(hi_spd_servo_min,         "HI_SPD_SERVO_MIN",   1200),
-
-    // @Param: LO_SPD_SERVO_MIN
-    // @DisplayName: Amarok low speed servo min
-    // @Description: This value reflect minimum servo throw when in low speed mode
-    // @Range: 800 2200
-    // @User: Advanced
-    GSCALAR(lo_spd_servo_min,         "LO_SPD_SERVO_MIN",  900),   
-
-
     // @Param: FORMAT_VERSION
     // @DisplayName: Eeprom format version number
     // @Description: This value is incremented when changes are made to the eeprom format
     // @User: Advanced
+
+     // @Param: OVERT_LIGHT_ON
+    // @DisplayName: Overt Light on point
+    // @Description: This value is the PWM value used to turn on the Amorak overt lights
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(overt_servo_on,         "OVERT_LIGHT_ON",   1400),
+
+     // @Param: LIGHT_OFF
+    // @DisplayName: Light off point
+    // @Description: This value is the PWM value used to turn off the Amorak lights
+    // @Range: 800 2200
+    // @User: Advanced
+    GSCALAR(overt_servo_off,         "OVERT_LIGHT_OFF",   900),
+
+
     GSCALAR(format_version,         "FORMAT_VERSION",   1),
 
     // @Param: LOG_BITMASK
