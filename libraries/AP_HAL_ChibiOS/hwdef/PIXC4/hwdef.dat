@@ -1,5 +1,5 @@
 # hw definition file for processing by chibios_hwdef.py
-# for The PIXC4, Nightcrawler variant
+# for The PIXC4 board
 # this is based on fmuv3
 
 # MCU class and specific type
@@ -20,7 +20,7 @@ define CONFIG_HAL_BOARD_SUBTYPE HAL_BOARD_SUBTYPE_CHIBIOS_FMUV3
 # Note that APJ is "ArduPilot JSON Firmware Format".
 
 # board ID for firmware load
-APJ_BOARD_ID 1006
+APJ_BOARD_ID 1020
 
 # Now you need to say what crystal frequency you have for this
 # board. All of the clocks are scaled against this. Typical values are
@@ -472,8 +472,8 @@ env OPTIMIZE -O2
 
 USB_VENDOR 0x0483 # ST
 USB_PRODUCT 0x5740
-USB_STRING_MANUFACTURER "ORNL"
-USB_STRING_PRODUCT "Nightcrawler"
+USB_STRING_MANUFACTURER "HORIZON31"
+USB_STRING_PRODUCT "PIXC4"
 USB_STRING_SERIAL  "%SERIAL%"
 
 # remap PB0/1 as ADC's
