@@ -77,6 +77,10 @@ public:
         k_param_gimbal_range,
 	k_param_flipper_main,
 	k_param_flipper_sub,
+	k_param_flipper_main_min,
+	k_param_flipper_main_max,
+	k_param_flipper_sub_min,
+	k_param_flipper_sub_max,
 
         // 97: RSSI
         k_param_rssi = 97,
@@ -258,6 +262,10 @@ public:
     AP_Int16    gimbal_range;
     AP_Int8     flipper_main;
     AP_Int8     flipper_sub;
+    AP_Int16	flipper_main_min;
+    AP_Int16 	flipper_main_max;
+    AP_Int16 	flipper_sub_min;
+    AP_Int16 	flipper_sub_max;
 
     // Misc
     //

@@ -136,6 +136,33 @@ const AP_Param::Info Rover::var_info[] = {
     // @User: Advanced
     GSCALAR(flipper_sub,         "FLIPPER_2_SERVO",  4),   
 
+    // @Param: FLIPPER_1_MIN
+    // @DisplayName: flipper main servo min
+    // @Description: This value is the minimum value used in the main flipper apparatus 
+    // @Range: 600 2200
+    // @User: Advanced
+    GSCALAR(flipper_main_min,         "FLIPPER_1_MIN",  900),   
+
+    // @Param: FLIPPER_1_MAX
+    // @DisplayName: flipper main servo max
+    // @Description: This value is the maximum value used in the main flipper apparatus 
+    // @Range: 600 2200
+    // @User: Advanced
+    GSCALAR(flipper_main_max,         "FLIPPER_1_MAX",  2200),  
+
+    // @Param: FLIPPER_2_MIN
+    // @DisplayName: flipper sub servo min
+    // @Description: This value is the minimum value used in the sub flipper apparatus 
+    // @Range: 600 2200
+    // @User: Advanced
+    GSCALAR(flipper_sub_min,         "FLIPPER_2_MIN",  900),   
+
+    // @Param: FLIPPER_2_MAX
+    // @DisplayName: flipper sub servo max
+    // @Description: This value is the maximum value used in the sub flipper apparatus 
+    // @Range: 600 2200
+    // @User: Advanced
+    GSCALAR(flipper_sub_max,         "FLIPPER_2_MAX",  2200),   
 
     // @Param: FORMAT_VERSION
     // @DisplayName: Eeprom format version number
