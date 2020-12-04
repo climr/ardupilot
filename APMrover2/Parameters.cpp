@@ -92,7 +92,7 @@ const AP_Param::Info Rover::var_info[] = {
     // @Description: This value is the PWM value used to turn on the Amorak IR lights
     // @Range: 800 2200
     // @User: Advanced
-    GSCALAR(ir_servo_on,         "OVERT_LIGHT_ON",   2000),
+    GSCALAR(ir_servo_on,         "IR_LIGHT_ON",   2000),
 
 
      // @Param: WEAPON_SERVO
