@@ -23,6 +23,7 @@ const AP_RAMTRON::ramtron_id AP_RAMTRON::ramtron_ids[] = {
     { 0x21, 0x08, 16,  2}, // FM25V01A
     { 0x22, 0x00, 32,  2}, // FM25V02
     { 0x22, 0x08, 32,  2}, // FM25V02A
+    { 0x22, 0x48, 32,  2}, // FM25V02A extended temp range version
     { 0x22, 0x01, 32,  2}, // FM25VN02
     { 0x23, 0x00, 64,  2}, // FM25V05
     { 0x23, 0x01, 64,  2}, // FM25VN05
@@ -37,10 +38,12 @@ const AP_RAMTRON::ramtron_id AP_RAMTRON::ramtron_ids[] = {
 // initialise the driver
 bool AP_RAMTRON::init(void)
 {
+	
     dev = hal.spi->get_device("ramtron");
     if (!dev) {
         return false;
     }
+
     WITH_SEMAPHORE(dev->get_semaphore());
 
     struct rdid {
@@ -50,6 +53,7 @@ bool AP_RAMTRON::init(void)
         uint8_t id2;
     } rdid;
     if (!dev->read_registers(RAMTRON_RDID, (uint8_t *)&rdid, sizeof(rdid))) {
+	printf("RAMTRON FAILED TO READ REGISTER\n");
         return false;
     }
 
@@ -60,7 +64,7 @@ bool AP_RAMTRON::init(void)
             return true;
         }
     }
-    hal.console->printf("Unknown RAMTRON manufacturer=%02x memory=%02x id1=%02x id2=%02x\n",
+    printf("Unknown RAMTRON manufacturer=%02x memory=%02x id1=%02x id2=%02x\n",
                         rdid.manufacturer[0], rdid.memory, rdid.id1, rdid.id2);
     return false;
 }
