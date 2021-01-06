@@ -53,7 +53,7 @@ bool AP_RAMTRON::init(void)
         uint8_t id2;
     } rdid;
     if (!dev->read_registers(RAMTRON_RDID, (uint8_t *)&rdid, sizeof(rdid))) {
-	printf("RAMTRON FAILED TO READ REGISTER\n");
+	//printf("RAMTRON FAILED TO READ REGISTER\n");
         return false;
     }
 
@@ -64,8 +64,8 @@ bool AP_RAMTRON::init(void)
             return true;
         }
     }
-    printf("Unknown RAMTRON manufacturer=%02x memory=%02x id1=%02x id2=%02x\n",
-                        rdid.manufacturer[0], rdid.memory, rdid.id1, rdid.id2);
+    //printf("Unknown RAMTRON manufacturer=%02x memory=%02x id1=%02x id2=%02x\n",
+    //                    rdid.manufacturer[0], rdid.memory, rdid.id1, rdid.id2);
     return false;
 }
 
