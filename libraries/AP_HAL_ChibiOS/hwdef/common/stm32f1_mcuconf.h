@@ -46,16 +46,13 @@
 #define STM32_HPRE                          STM32_HPRE_DIV1
 #elif STM32_HSECLK == 16000000U
 #define STM32_SW                            STM32_SW_PLL
-#define STM32_PLLSRC                        STM32_PLLSRC_PREDIV1
+#define STM32_PLLSRC                        STM32_PLLSRC_HSE
+#define STM32_PLLXTPRE                      STM32_PLLXTPRE_DIV2
 #define STM32_PLLMUL_VALUE                  9
-#define STM32_PREDIV1_VALUE                 2
-#define STM32_PREDIV2_VALUE                 4
 #define STM32_PPRE1                         STM32_PPRE1_DIV2
 #define STM32_PPRE2                         STM32_PPRE2_DIV2
 #define STM32_ADCPRE                        STM32_ADCPRE_DIV4
 #define STM32_HPRE                          STM32_HPRE_DIV1
-#define STM32_PLL2MUL_VALUE                 16
-#define STM32_PLL3MUL_VALUE                 16
 #elif STM32_HSECLK == 24000000U
 #define STM32_SW                            STM32_SW_HSE
 #define STM32_PLLSRC                        STM32_PLLSRC_HSE

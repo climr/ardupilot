@@ -1,7 +1,7 @@
 # hw definition file for processing by chibios_pins.py
 
 # MCU class and specific type
-MCU STM32F100 STM32F100xB
+MCU STM32F103 STM32F103xB
 
 FLASH_RESERVE_START_KB 4
 
@@ -9,11 +9,11 @@ FLASH_RESERVE_START_KB 4
 APJ_BOARD_ID 3
 
 # crystal frequency
-OSCILLATOR_HZ 24000000
+OSCILLATOR_HZ 16000000
 
 define CH_CFG_ST_FREQUENCY 1000
 
-FLASH_SIZE_KB 64
+FLASH_SIZE_KB 128
 
 # ChibiOS system timer
 
