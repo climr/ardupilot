@@ -65,15 +65,17 @@ extern const AP_HAL::HAL &hal;
  */
 bool AP_IOMCU::upload_fw(void)
 {
+    
     // set baudrate for bootloader
     uart.begin(115200, 256, 256);
 
     bool ret = false;
 
     /* look for the bootloader for 150 ms */
-    for (uint8_t i = 0; i < 15; i++) {
+    for (uint8_t i = 0; i < 15; i++) {  
         ret = sync();
         if (ret) {
+	    printf("got return value of %d from sync\n\r", ret);
             break;
         }
         hal.scheduler->delay(10);
@@ -81,6 +83,7 @@ bool AP_IOMCU::upload_fw(void)
 
     if (!ret) {
         debug("IO update failed sync");
+	printf("IO update failed sync\n\r");
         return false;
     }
 
@@ -89,23 +92,29 @@ bool AP_IOMCU::upload_fw(void)
 
     if (!ret) {
         debug("Err: failed to contact bootloader");
+	printf("Err: failed to contact bootloader\n\r");
         return false;
     }
     if (bl_rev > BL_REV) {
         debug("Err: unsupported bootloader revision %u", unsigned(bl_rev));
+	printf("Err: unsupported bootloader revision\n\r");
         return false;
     }
     debug("found bootloader revision: %u", unsigned(bl_rev));
+	printf("found bootloader revision: %u\r\n", unsigned(bl_rev));
+
 
     ret = erase();
     if (!ret) {
         debug("erase failed");
+	printf("erase failed\r\n");
         return false;
     }
 
     ret = program(fw_size);
     if (!ret) {
         debug("program failed");
+printf("program failed\r\n");
         return false;
     }
 
@@ -117,6 +126,7 @@ bool AP_IOMCU::upload_fw(void)
 
     if (!ret) {
         debug("verify failed");
+printf("verify failed\r\n");
         return false;
     }
 
@@ -124,6 +134,7 @@ bool AP_IOMCU::upload_fw(void)
 
     if (!ret) {
         debug("reboot failed");
+printf("reboot failed\r\n");
         return false;
     }
 
@@ -143,7 +154,9 @@ bool AP_IOMCU::recv_byte_with_timeout(uint8_t *c, uint32_t timeout_ms)
     uint32_t start = AP_HAL::millis();
     do {
         int16_t v = uart.read();
+	
         if (v >= 0) {
+            printf("got byte %d\r\n", v);
             *c = uint8_t(v);
             return true;
         }
@@ -278,7 +291,8 @@ bool AP_IOMCU::get_info(uint8_t param, uint32_t &val)
  */
 bool AP_IOMCU::erase()
 {
-    debug("erase...");
+    debug("erase..."); 
+    printf("erase... %d %d\r\n",PROTO_CHIP_ERASE, PROTO_EOC);
     send(PROTO_CHIP_ERASE);
     send(PROTO_EOC);
     return get_sync(10000);
