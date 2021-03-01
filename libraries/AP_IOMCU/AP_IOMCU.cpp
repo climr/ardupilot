@@ -859,6 +859,7 @@ void AP_IOMCU::set_safety_mask(uint16_t chmask)
  */
 bool AP_IOMCU::healthy(void)
 {
+    printf("Checking iomcu health, crc %d, protocol_fail_count %d, io_reset %d\r\n", crc_is_ok, protocol_fail_count, !detected_io_reset);
     return crc_is_ok && protocol_fail_count == 0 && !detected_io_reset;
 }
 

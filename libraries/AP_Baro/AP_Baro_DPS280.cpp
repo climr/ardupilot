@@ -146,7 +146,7 @@ bool AP_Baro_DPS280::init()
     if (!dev->read_registers(DPS280_REG_PID, &whoami, 1) ||
         whoami != DPS280_WHOAMI) {
         // not a DPS280
-        printf("DPS280 whoami=0x%x\n", whoami);
+        printf("not a DPS280 whoami=0x%x\n", whoami);
         dev->get_semaphore()->give();
         return false;
     }

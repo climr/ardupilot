@@ -653,8 +653,13 @@ bool AP_Arming::servo_checks(bool report) const
 #if HAL_WITH_IO_MCU
     if (!iomcu.healthy()) {
         check_failed(report, "IOMCU is unhealthy");
+	//printf("IOMCU is not healthy\r\n");
         check_passed = false;
     }
+    //else
+	//{
+	//printf("IOMCU is ok\r\n");
+	//}
 #endif
 
     return check_passed;

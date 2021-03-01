@@ -74,8 +74,10 @@ bool AP_IOMCU::upload_fw(void)
     for (uint8_t i = 0; i < 15; i++) {
         ret = sync();
         if (ret) {
+            printf("got sync value of %d", ret);
             break;
         }
+	printf("waiting for sync");
         hal.scheduler->delay(10);
     }
 
@@ -89,25 +91,30 @@ bool AP_IOMCU::upload_fw(void)
 
     if (!ret) {
         debug("Err: failed to contact bootloader");
+	printf("Err: failed to contact bootloader");
         return false;
     }
     if (bl_rev > BL_REV) {
         debug("Err: unsupported bootloader revision %u", unsigned(bl_rev));
+	printf("Err: unsupported bootloader revision");
         return false;
     }
-    debug("found bootloader revision: %u", unsigned(bl_rev));
+    printf("found bootloader revision: %u", unsigned(bl_rev));
 
     ret = erase();
     if (!ret) {
-        debug("erase failed");
+        printf("erase failed");
         return false;
     }
+printf("erased");
 
     ret = program(fw_size);
     if (!ret) {
-        debug("program failed");
+        printf("program failed");
         return false;
     }
+
+printf("programmed");
 
     if (bl_rev <= 2) {
         ret = verify_rev2(fw_size);
@@ -119,6 +126,8 @@ bool AP_IOMCU::upload_fw(void)
         debug("verify failed");
         return false;
     }
+
+printf("verified");
 
     ret = reboot();
 
