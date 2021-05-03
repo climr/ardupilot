@@ -212,6 +212,9 @@ void AP_Compass_RM3100::timer()
     magx >>= 8;
     magy >>= 8;
     magz >>= 8;
+ 
+magy *= -1;
+//magz *= -1;
 
     // apply scaler and store in field vector
     field(magx * _scaler, magy * _scaler, magz * _scaler);

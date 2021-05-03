@@ -501,3 +501,4 @@ private:
 namespace AP {
     Compass &compass();
 };
+
