@@ -213,6 +213,8 @@ void AP_Compass_RM3100::timer()
     magy >>= 8;
     magz >>= 8;
 
+    magy *= -1;  //fix for compass layout error, only on PixC4-Jetson R0
+
     // apply scaler and store in field vector
     field(magx * _scaler, magy * _scaler, magz * _scaler);
 
